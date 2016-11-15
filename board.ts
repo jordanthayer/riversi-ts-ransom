@@ -37,7 +37,7 @@ export class Board {
         return result;
     }
 
-    private legalP(pos : Position, player : Player.Player){
+    private legalP(pos : Position.Position, player : Player.Player){
 
         if(player != this.toPlay){
             return MoveResponse.Illegal_Turn_Order;
@@ -59,7 +59,7 @@ export class Board {
         return MoveResponse.Legal;
     }
 
-    public move(pos : Position, player : Player.Player){
+    public move(pos : Position.Position, player : Player.Player){
         let legal = this.legalP(pos, player);
         if(legal == MoveResponse.Legal){
             this.pieces[pos.col][pos.row] = player;
