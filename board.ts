@@ -56,6 +56,9 @@ export class Board {
             return MoveResponse.Illegal_Occupied;
         }
 
+        // now we know nothing insane is happening.  We have to decide if we're adjacent
+        // to a piece from the same player. [JTT 15-11-16]
+
         return MoveResponse.Legal;
     }
 
